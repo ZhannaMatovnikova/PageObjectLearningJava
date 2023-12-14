@@ -8,10 +8,11 @@ public class MainPage {
         this.driver = driver;
     }
 
-    private By signInButtonHeader = By.xpath("//a[contains(text(), 'Sign in')][1]");
-    private By signUpButtonHeader = By.xpath("//a[contains(text(), 'Sign up')][1]");
-    private By signUpButton2 = By.xpath("//a[contains(text(), 'Sign up')][2]");
-    private By signUpField = By.xpath("//input[@name='type']");
+    private By signInButtonHeader = By.cssSelector("body > div.logged-out.env-production.page-responsive.header-overlay.home-campaign > div.position-relative.js-header-wrapper > header > div > div.HeaderMenu--logged-out.p-responsive.height-fit.position-lg-relative.d-lg-flex.flex-column.flex-auto.pt-7.pb-4.top-0 > div > div > div > a");
+    private By signUpButtonHeader = By.cssSelector("body > div.logged-out.env-production.page-responsive.header-overlay.home-campaign > div.position-relative.js-header-wrapper > header > div > div.HeaderMenu--logged-out.p-responsive.height-fit.position-lg-relative.d-lg-flex.flex-column.flex-auto.pt-7.pb-4.top-0 > div > div > a");
+
+    private By signUpButton2 = By.cssSelector("body > div.logged-out.env-production.page-responsive.header-overlay.home-campaign > div.application-main > main > div:nth-child(1) > div.px-3.home-campaign-hero > div > div > div.col-11.text-left.pl-2.pl-sm-0.mt-n4 > div.d-flex.flex-column.flex-md-row > form > div > button");
+    private By signUpField = By.cssSelector("#user_email");
 
     public LoginPage clickSignInHeader(){
         driver.findElement(signInButtonHeader).click();
