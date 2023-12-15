@@ -12,7 +12,7 @@ public class SignUpPage {
 
     private By emailField = By.cssSelector("#email");
     private By buttonContinue = By.cssSelector("#email-container > div.d-flex.flex-items-center.flex-column.flex-sm-row > button");
-    private By errorEmail = By.cssSelector("#email-err");
+    private By errorEmail = By.xpath("//p[@class='mb-0']");
 
     public SignUpPage typeEmail(String email) {
         driver.findElement(emailField).sendKeys(email);
@@ -29,12 +29,12 @@ public class SignUpPage {
     }
 
 
-    public String GetHeadingText(){
+    public String getHeadingText(){
         return driver.findElement(heading).getText();
 
     }
 
-    public String ErrorText(){
+    public String errorText(){
         return driver.findElement(errorEmail).getText();
 
     }

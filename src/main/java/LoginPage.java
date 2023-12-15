@@ -35,14 +35,18 @@ public class LoginPage {
     }
 
 
-    public String GetHeadingText(){
+    public String getHeadingText(){
         return driver.findElement(heading).getText();
 
     }
 
-    public SignUpPage CreateAccount(){
+    public SignUpPage createAccount(){
         driver.findElement(createAccountLink).click();
         return new SignUpPage(driver);
+    }
+
+    public String getErrorText(){
+        return driver.findElement(error).getText();
     }
 
 
